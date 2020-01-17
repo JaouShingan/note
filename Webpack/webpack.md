@@ -72,7 +72,7 @@ externals: {
         configureWebpack: {
             plugins: [
                 new DllReferencePlugin({
-                    context: path.resolve(__dirname, 'src'),
+                    context: __dirname,
                     manifest: require('./dll/vendor.manifest.json')
                 }),
     	    ],
@@ -99,4 +99,6 @@ externals: {
 
     然后执行启动项目的命令即可
 
-    > 注意要点：dll命令打包生成的文件最好单独放一个文件目录下，如文中写到的dll。
+    > 注意要点：
+        1、dll命令打包生成的文件最好单独放一个文件目录下，如文中写到的dll。
+        2、在配置vue.config.js文件时，一定要确保context的值要正确。否则还是会将所有的文件一起打包。

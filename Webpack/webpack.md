@@ -25,14 +25,17 @@ externals: {
 有三个默认选项：limit、fallback、mimetype
 
 limit
+
 Type: Number|Boolean|String Default: undefined
 当在设定值范围内时，将匹配的文件转换为 Data URL 。当超过时，将文件传给fallback设定的loader处理。
 
 fallback
+
 Type: String Default: 'file-loader'
 当匹配文件超过设定值后，将会进入fallback所指定的loader进行处理。并且url-loader的options将会传给fallback所指定的loader。
 
 mimetype
+
 Type: String Default: (file extension)
 
 

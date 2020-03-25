@@ -7,6 +7,7 @@
     touch .git-credentials
     vim .git-credentials
     https://{username}:{password}@github.com
+    http://{username}:{password}@github.com
 
 2.设置config
 

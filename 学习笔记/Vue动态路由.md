@@ -1,0 +1,27 @@
+# Vue动态路由的设置
+
+这里的动态路由主要是指从后台获取路由表，前端对获取对路由表进行处理。
+
+1、首先需要建立一个对象，用于存储所有需要作为动态路由对页面，如：
+```javascript
+const constantRouterComponents = {
+  // page1:表示这个页面的别名，
+  // 后面的import表示按需加载，
+  // '@/views/page1'表示page1这个页面在项目文件中的位置
+  'page1': () => import('@/views/page1')
+  // ...
+}
+// 如果不定义这个存储页面的对象，那么项目将不会把需要设置为动态路由的页面打包。
+```
+2、从后台获取路由表（结构一般如下）
+```javascript
+[
+  {
+    path: '/path', // 路由路径
+    component: 'page1' // page1对应 constantRouterComponents 里的key
+    // 其他相关参数...
+  }
+]
+
+```
+后，结合`constantRouterComponents`对象，生成需要的路由。
